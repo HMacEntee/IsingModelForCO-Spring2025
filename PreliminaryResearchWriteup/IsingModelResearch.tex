@@ -46,6 +46,23 @@ We demonstrate the functionality of our implementation on a weighted 5-complete 
 
 The Ising model, a mathematical model of a magnetic material, provides a description of the energy of a system of atoms\cite{b1}. It is modeled by random spin-interactions depicted as: $\sigma \in \{-1, +1\}$. For the purpose of this document, we will consider the spin-glass Ising model. That is, the spins are randomly distributed between $\pm1$. Ising spin glass models are NP-Hard problems for classical computers. Naturally, we are able to correlate this property to all NP-Hard problems, and can be justifiably stated that Ising spin glasses are able to be polynomially mapped to all other NP-Hard problems\cite{b2}.
 
+Formally, the $N$-spin Ising problem aims to find the configuration of spins that minimizes the energy Hamiltonian, 
+\begin{equation}
+H = -\sum_{i,j<N}J_{ij}\sigma_i\sigma_j - \sum_ih_i\sigma_i
+\end{equation}
+where $J_{ij}$ represents the coupling coeffcient, negligible for non-neighboring spins. This document will explore the solving of the NP-Hard problem MaxCut using the Ising spin glass model. As such, the energy of MaxCut can be modeled by the following equation:
+\begin{equation}
+Cut(s) = \frac{1}{2}\sum_{(i,j)\in E}(1-\sigma_i\sigma_j)
+\end{equation}
+To map this to the Hamiltonian for Ising spin glass and maintain the objective of the problem, we aim to solve for the ground state of $H(s) = -Cut(s)$. In other words, we have the following equation representing the Hamiltonian we will strive to minimize:
+\begin{equation}
+H(s) = \sum_{(i,j)\in E}\sigma_i\sigma_j
+\end{equation}
+
+
+
+
+
 \begin{thebibliography}{00}
 \bibitem{b1} Carlson, C., Davies, E., Kolla, A., \& Perkins, W. (2022). Computational thresholds for the fixed-magnetization Ising model. Proceedings of the 54th Annual ACM SIGACT Symposium on Theory of Computing (STOC 2022), 1459–1472. https://doi.org/10.1145/3519935.3520003
 \bibitem{b2} Lucas, A. (2014). Ising formulations of many NP problems. Frontiers in Physics, 2(5). https://doi.org/10.3389/fphy.2014.00005
