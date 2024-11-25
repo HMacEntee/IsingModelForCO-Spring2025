@@ -44,13 +44,14 @@ We demonstrate the functionality of our implementation on a weighted 5-complete 
 \end{abstract}
 \end{comment}
 
-The Ising model is a mathematical model of a ferromagnetic material under the presence of a magnetic field, which allows for the analysis of the thermodynamics of a system of ferromagnetic particles\cite{b1}. When applied with the spin glass magnetic state, the Ising spin-glass model can be utilized to analyze the thermodynamics of unordered or chaotic systems. Particularly, the spin-glass Ising model aligns each ferromagnetic particle in a lattice with a random spin-interactions depicted as: $\sigma \in \{-1, +1\}$. For the purpose of this document, we will consider the spin-glass Ising model to solve for popular and known NP-Hard problems. %That is, the spins are randomly distributed between $\pm1$.
+\section{Introduction}
+The Ising model is a mathematical model of a ferromagnetic material under the presence of a magnetic field, which allows for the analysis of the thermodynamics of a system of ferromagnetic particles\cite{b1}. When applied with the spin glass magnetic state, the Ising spin-glass model can be utilized to analyze the thermodynamics of unordered or chaotic systems. Particularly, the spin-glass Ising model aligns each ferromagnetic particle in a lattice with a random spin-interactions depicted as: $\sigma \in \{-1, +1\}$. For the purpose of this document, we will consider the spin-glass Ising model to compute NP-Hard problems. %That is, the spins are randomly distributed between $\pm1$.
 
 Formally, the $N$-spin Ising problem aims to find the configuration of spins that minimizes the energy Hamiltonian, 
 \begin{equation}
 H = -\sum_{i,j<N}J_{ij}\sigma_i\sigma_j - \sum_ih_i\sigma_i
 \end{equation}
-where $J_{ij}$ represents the coupling coeffcient, negligible for non-neighboring spins. This document will explore the solving of the NP-Hard problem MaxCut using the Ising spin glass model. As such, the energy of MaxCut can be modeled by the following equation:
+where $J_{ij}$ represents the coupling coefficient, negligible for non-neighboring spins, and $h_i$ represents the magnetic field acting on spin $i$. This document will explore the solving of the NP-Hard problem MaxCut using the Ising spin glass model. As such, the energy of MaxCut can be modeled by the following equation:
 \begin{equation}
 Cut(s) = \frac{1}{2}\sum_{(i,j)\in E}(1-\sigma_i\sigma_j)
 \end{equation}
@@ -58,15 +59,15 @@ To map this to the Hamiltonian for Ising spin glass and maintain the objective o
 \begin{equation}
 H(s) = \sum_{(i,j)\in E}\sigma_i\sigma_j
 \end{equation}
-Due to the difficulty of finding the minimum Hamiltonian of a chaotic systems, the Ising spin glass model is a NP-Hard problem for classical computers. Naturally, we are able to correlate this property to all NP-Hard problems, and can be justifiably stated that Ising spin glasses are able to be polynomially mapped to all other NP-Hard problems\cite{b2}.
+Due to the difficulty of finding the minimum Hamiltonian of a chaotic systems, the Ising spin glass model is a NP-Hard problem for classical computers. Naturally, we are able to correlate this property to all NP-Hard problems, and can justifiably state that Ising spin glasses can be polynomially mapped to all other NP-Hard problems\cite{b2}.
 
+\section{Existing Methods}
 
 
 
 \begin{thebibliography}{00}
 \bibitem{b1} Carlson, C., Davies, E., Kolla, A., \& Perkins, W. (2022). Computational thresholds for the fixed-magnetization Ising model. Proceedings of the 54th Annual ACM SIGACT Symposium on Theory of Computing (STOC 2022), 1459–1472. https://doi.org/10.1145/3519935.3520003
 \bibitem{b2} Lucas, A. (2014). Ising formulations of many NP problems. Frontiers in Physics, 2(5). https://doi.org/10.3389/fphy.2014.00005
-\bibitem{b3} King, A. D., Bernoudy, W., King, J., Berkley, A. J., \& Lanting, T. (2018). Emulating the coherent Ising machine with a mean-field algorithm. arXiv. https://doi.org/10.48550/arXiv.1806.08422
 
 
 
