@@ -15,7 +15,7 @@ from pulp import *
 
 # problem forumlation dervied from the below 
 # https://www.tcs.tifr.res.in/~prahladh/teaching/2009-10/limits/lectures/lec03.pdf
-def milp(graph, solver):
+def bip(graph, solver):
 
     # Create dictionary of weights dependent on weight/unweighted graph
     edges = graph.edges(data=True)
@@ -23,7 +23,7 @@ def milp(graph, solver):
     weighted = nx.is_weighted(graph)
     if weighted:
         pass
-        weights ={(u, v) : w["weight"] for (u, v, w) in edges}
+        weights ={(u, v) : int(w["weight"]) for (u, v, w) in edges}
     else:
         weights = {(u, v) : 1 for (u, v, _) in edges}
 
@@ -58,21 +58,15 @@ def milp(graph, solver):
 
 if __name__ == "__main__":
 
-    # create temp nxgraph (weighted and unweighted)
-    fiveGNW= nx.Graph()
-    fiveGNW.add_nodes_from([0,1,2,3,4])
-    fiveGNW.add_edges_from([(0,1), (0,2), (1,2), (1,3), (2,4), (3,4)])
-
-    fiveGW= nx.Graph()
-    fiveGW.add_nodes_from([0,1,2,3,4])
-    fiveGW.add_weighted_edges_from([(0,1,1), (0,2,1), (1,2,1), (1,3,1), (2,4,1), (3,4,1)])
+    # Extract graph data from data files
+    graph = read_nxgraph('.././data/gset/gset_14.txt')
 
     # List available solvers usable locally
     print(listSolvers(onlyAvailable=True))
 
     # solve for undirected graph
-    milp(fiveGNW, GUROBI)    
-    # milp(fiveGNW, CPLEX)    
+    bip(graph, GUROBI)    
+    # bip(fiveGNW, CPLEX_CMD)    
         
 
 
