@@ -36,16 +36,8 @@ macenh@rpi.edu}
 
 \maketitle
 
-\begin{comment}
-\begin{abstract}
-The integration of quantum computing in finance holds significant promise in showcasing the power of quantum supremacy. By utilizing the quantum approximate optimization algorithm (QAOA), we are able to perform the MaxCut operation on a connected graph of stocks to perform portfolio optimization. In QAOA, a quantum-classical loop consisting of a parameterized quantum circuit and classical optimizer solves a combinatorial problem. This poster shows how we were able to map stock market information to a graph that can undergo the operation of QAOA. Our implementation focuses on using Modern Portfolio Theory (MPT) to evaluate stocks, and aims to separate the portfolio to diversify the portfolio, minimizing risk and maximizing return.
-
-We demonstrate the functionality of our implementation on a weighted 5-complete graph. This graph considers 5 stocks and minimizes the correlation between the two to create a diverse portfolio. We achieved a fidelity of 81\% using 8 repetitions on the simulated environment.
-\end{abstract}
-\end{comment}
-
 \section{Introduction}
-The Ising model is a mathematical model of a ferromagnetic material under the presence of a magnetic field, which allows for the analysis of the thermodynamics of a system of ferromagnetic particles\cite{b1}. When applied with the spin glass magnetic state, the Ising spin-glass model can be utilized to analyze the thermodynamics of unordered or chaotic systems. Particularly, the spin-glass Ising model aligns each ferromagnetic particle in a lattice with a random spin-interactions depicted as: $\sigma \in \{-1, +1\}$. For the purpose of this document, we will consider the spin-glass Ising model to compute NP-Hard problems. %That is, the spins are randomly distributed between $\pm1$.
+The Ising model is a mathematical model of a ferromagnetic material under the presence of a magnetic field, which allows for the analysis of the thermodynamics of a system of ferromagnetic particles\cite{b1}. When applied with the spin glass magnetic state, the Ising spin-glass model can be utilized to analyze the thermodynamics of unordered or chaotic systems. Particularly, the spin-glass Ising model aligns each ferromagnetic particle in a lattice with a random spin-interactions depicted as: $\sigma \in \{-1, +1\}$. For the purpose of this document, we will consider the spin-glass Ising model to compute NP-Hard problems.
 
 Formally, the $N$-spin Ising problem aims to find the configuration of spins that minimizes the energy Hamiltonian, 
 \begin{equation}
@@ -62,6 +54,37 @@ H(s) = \sum_{(i,j)\in E}\sigma_i\sigma_j
 Due to the difficulty of finding the minimum Hamiltonian of a chaotic systems, the Ising spin glass model is a NP-Hard problem for classical computers. Naturally, we are able to correlate this property to all NP-Hard problems, and can justifiably state that Ising spin glasses can be polynomially mapped to all other NP-Hard problems\cite{b2}.
 
 \section{Existing Methods}
+We will be comparing our results to algorithms such as BLS, CPLEX, Gurobi, and MCPG. A table is shown below documenting the results the BLS and MCPG algorithms achieved on Gset datasets according to their referenced papers. The Gurobi and CPLEX results were obtained using a local implementation of PuLP.
+
+\begin{table}[htbp]
+\caption{Gset Dataset Results}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Graph} & \textbf{Nodes} & \textbf{Edges} & \textbf{MCPG} & \textbf{BLS} & \textbf{Gurobi} &\textbf{CPLEX}\\
+\hline 
+G14 & 800& 4,694& 3,064 &3064 & --- &---\\
+\hline
+G15 & 800& 4,661& 3,050 & 3,050 &---  &---\\
+\hline
+G22 & 2,000& 19,990& 13,359 &13,359 &--- &---\\
+\hline
+G49 & 3,000& 6,000& 6,000 &6,000 &--- &---\\
+\hline
+G50 & 3,000& 6,000& 5,880 &5,880 &--- &---\\
+\hline
+G55 & 5,000& 12,468& 10,294 &10,294 &--- &---\\
+\hline
+G70 & 10,000& 9,999 & 9,595 &9,541 &--- &---\\
+\hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+The most impressive algorithm shown is the Monte Carlo Policy Gradient (MCPG) method. This algorithm has specific features that contribute to its success, including: a filter function that acts to reduce the probability the algorithm will fall into local minima; a sampling procedure with filter function that starts from the best solution found previously and aims to maintain diversity; a modified policy gradient algorithm to update the probabilistic model; and a probabilistic model that guides the sampling procedure towards potentially good solutions.
+
+
 
 
 
@@ -69,6 +92,7 @@ Due to the difficulty of finding the minimum Hamiltonian of a chaotic systems, t
 \bibitem{b1}Carlson, C., Davies, E., Kolla, A., \& Perkins, W. (2022). Computational thresholds for the fixed-magnetization Ising model. Proceedings of the 54th Annual ACM SIGACT Symposium on Theory of Computing (STOC 2022), 1459–1472. https://doi.org/10.1145/3519935.3520003
 \bibitem{b2}Lucas, A. (2014). Ising formulations of many NP problems. Frontiers in Physics, 2(5). https://doi.org/10.3389/fphy.2014.00005
 \bibitem{b3}Benlic, U., \& Hao, J.-K. (2013). Breakout Local Search for the Max-Cut problem. Engineering Applications of Artificial Intelligence, 26(3), 1162–1173. https://doi.org/10.1016/j.engappai.2012.09.001
+\bibitem{b4}Chen, C., Chen, R., Li, T., Ao, R., \& Wen, Z. (2023). Monte Carlo policy gradient method for binary optimization. arXiv. https://arxiv.org/abs/2307.00783
 
 
 \end{thebibliography}
