@@ -70,12 +70,20 @@ def transfer_weightmatrix_to_nxgraph(weightmatrix: List[List[int]], num_nodes: i
     return graph
 
 # max total cuts
-def obj_maxcut(result: Union[Tensor, List[int], np.array], graph: nx.Graph):
-    num_nodes = len(result)
+# def obj_maxcut(result: Union[Tensor, List[int], np.array], graph: nx.Graph):
+#     num_nodes = len(result)
+#     obj = 0
+#     adj_matrix = transfer_nxgraph_to_adjacencymatrix(graph)
+#     for i in range(num_nodes):
+#         for j in range(i + 1, num_nodes):
+#             if result[i] != result[j]:
+#                 obj += adj_matrix[(i, j)]
+#     return obj
+
+def obj_maxcut(result: Union[Tensor, List[int], np.array], graph: nx.Graph) -> float:
     obj = 0
-    adj_matrix = transfer_nxgraph_to_adjacencymatrix(graph)
-    for i in range(num_nodes):
-        for j in range(i + 1, num_nodes):
-            if result[i] != result[j]:
-                obj += adj_matrix[(i, j)]
-    return obj
+    for i, j, data in graph.edges(data=True):  # Iterate through all edges with weights
+        weight = data.get('weight', 1)  # Default weight is 1 if not provided
+        if result[i] != result[j]:  # Edge spans the cut
+            obj += int(weight)
+    return int(obj)
