@@ -8,27 +8,41 @@
 \begin{document}
 
 \begin{enumerate}
-\item \textbf{Project Title:} Solving Combinatorial Problems with the Ising Model and Machine Learning
+\item \textbf{Project Title:} Solving Combinatorial Problem with the Ising Model and Machine Learning
 
 \item \textbf{Investigator List:} Levy Lin, Holden Mac Entee, Yanglet Xiaoyang Liu
 
 \item \textbf{Project Description}
-	\begin{enumerate}
-		\item \textbf{Motivation}
-		\newline
-		The Ising model is a powerful model for combinatorial problems, capable of mapping various complex problem states for the discovery of their low energy Hamiltonian or optimal solution. Through this model many NP-Hard problems such as the MaxCut, Traveling Salesman, and Graph-Coloring problem can be solved for at large-scale, opposed to the classical landscape. When combined with the advantages of machine learning, the efficiency and performance of the combinatorial applications of the Ising model can be improved. This projects seeks to explore and discover improvements to pre-exisitng and proposed Ising models with applications towards solving combinatorial problems with machine learning. 
+\begin{enumerate}
+	\item \textbf{Motivation}
+	\newline
+	The Ising model is a powerful model for combinatorial problems, capable of mapping various complex problem states for the discovery of their low energy Hamiltonian or optimal solution. Through this model many NP-Hard problems such as the MaxCut, Traveling Salesman, and Graph-Coloring problem can be solved for at large-scale, opposed to the classical landscape. When combined with the advantages of machine learning, the efficiency and performance of the combinatorial applications of the Ising model can be improved. This projects seeks to explore and discover improvements to pre-exisitng and proposed Ising models with applications towards solving combinatorial problems with machine learning. 
 
-		\item \textbf{Key Methodology}
-
-		\item \textbf{Expected Outcomes}
-
+	\item \textbf{Key Methodology}
 		
+	\begin{enumerate}
+			
+		\item \textbf{\underline{Task 1: Leverage machine learning to approach a good solution quickly.}} The MCPG algorithm uses a specialized sampling procedure to proabilistically approach a good solution rapidly [4]. We will propose an improved policy gradient procedure to better respond to patterns found in the data and increase predictability of results using a deterministic policy implementation.
+
+		\item \textbf{\underline{Task 2: Evaluate performance on large Gset graphs.}} The current implementations we have benchmarked (Gurobi, MCPG, BLS) have been tested and measured on large Gset graphs. We aim to outperform these existing implementations. This will highlight the better ability and scalability of our algorithm.
+
+		\item \textbf{\underline{Task 3. Diversify the ising Model datasets and demonstrate superiority.}} The current data we have measured consists of Gset graphs. We will provide data from diverse datasets to show the broad ability of our algorithm to ourperform its counterparts. 
+
 	\end{enumerate}
+
+	\item \textbf{Expected Outcomes}
+		This project would produce a novel algorithm that will demonstrate high performance and scalability when solving Ising models. It will provide data comparing to several state-of-the-art implementations and underscore its ascendency.
+	
+	\begin{enumerate}
+		\item Implement the algorithm with improved machine learning techniques to find better solutions in quicker time.
+		\item Next, we will document the results of this improved algorithm and organize a paper detailing the enhancement in a paper that discusses the adjustments that achieved these new conclusions.
+	\end{enumerate}
+
+\end{enumerate}
 
 \item \textbf{Estimated Project Timeline}
 \end{enumerate}
 
-\textbf{References}
 \begin{thebibliography}{00}
 \bibitem{b1}Carlson, C., Davies, E., Kolla, A., \& Perkins, W. (2022). Computational thresholds for the fixed-magnetization Ising model. Proceedings of the 54th Annual ACM SIGACT Symposium on Theory of Computing (STOC 2022), 1459–1472. https://doi.org/10.1145/3519935.3520003
 \bibitem{b2}Lucas, A. (2014). Ising formulations of many NP problems. Frontiers in Physics, 2(5). https://doi.org/10.3389/fphy.2014.00005
