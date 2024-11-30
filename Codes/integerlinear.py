@@ -52,21 +52,21 @@ def bip(graph, solver):
     maxcut.solve(solver(msg=True, timeLimit=60))
 
     # display results
-    print(f"Gurobi Status:{maxcut.status}")
+    print(f"{solver} Status:{maxcut.status}")
     cutedges = [ pulp.value(e[(u, v)]) for (u, v) in e ]
     print(f"Edges cut: {sum(cutedges)}")
 
 if __name__ == "__main__":
 
     # Extract graph data from data files
-    graph = read_nxgraph('.././data/gset/gset_14.txt')
+    graph = read_nxgraph('.././data/syn/powerlaw_200_ID0.txt')
 
     # List available solvers usable locally
     print(listSolvers(onlyAvailable=True))
 
     # solve for undirected graph
     bip(graph, GUROBI)    
-    # bip(fiveGNW, CPLEX_CMD)    
+    # bip(graph, CPLEX_CMD)    
         
 
 
