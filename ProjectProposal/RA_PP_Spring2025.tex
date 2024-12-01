@@ -8,7 +8,7 @@
 \begin{document}
 
 \begin{enumerate}
-\item \textbf{Project Title:} Solving Combinatorial Problem with the Ising Model and Machine Learning
+\item \textbf{Project Title:} Training Transformer Network to Find Ground State of Ising Models
 
 \item \textbf{Investigator List:} Levy Lin, Holden Mac Entee, Yanglet Xiaoyang Liu
 
@@ -22,25 +22,29 @@
 		
 	\begin{enumerate}
 			
-		\item \textbf{\underline{Task 1: Leverage machine learning to approach a good solution quickly.}} The MCPG algorithm uses a specialized sampling procedure to proabilistically approach a good solution rapidly [4]. We will propose an improved policy gradient procedure to better respond to patterns found in the data and increase predictability of results using a deterministic policy implementation.
+		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasts of Ising models.}} 
+		\item \textbf{\underline{Task 2: Reproduce Professor Liu's codes and pipeline for baseline.}} 
 
-		\item \textbf{\underline{Task 2: Evaluate performance on large Gset graphs.}} The current implementations we have benchmarked (Gurobi, MCPG, BLS) have been tested and measured on large Gset graphs. We aim to outperform these existing implementations. This will highlight the better ability and scalability of our algorithm.
-
-		\item \textbf{\underline{Task 3. Diversify the ising Model datasets and demonstrate superiority.}} The current data we have measured consists of Gset graphs. We will provide data from diverse datasets to show the broad ability of our algorithm to ourperform its counterparts. 
+		\item \textbf{\underline{Task 3: Implement a variant of transformer network and use reinforcement learning algorithm to train it under Professor Liu's guidance.}} 
 
 	\end{enumerate}
 
 	\item \textbf{Expected Outcomes}
-		This project would produce a novel algorithm that will demonstrate high performance and scalability when solving Ising models. It will provide data comparing to several state-of-the-art implementations and underscore its ascendency.
 	
 	\begin{enumerate}
-		\item Implement the algorithm with improved machine learning techniques to find better solutions in quicker time.
-		\item Next, we will document the results of this improved algorithm and organize a paper detailing the enhancement in a paper that discusses the adjustments that achieved these new conclusions.
+		\item Beat existing solvers by 0.5\% on graphs ranging from 300 to 500 nodes.
+		\item Scale our algorithm to large graph instances ranging from 1,000 to 3,000 nodes and outperform existing solvers by 2-3\%.
 	\end{enumerate}
 
 \end{enumerate}
 
 \item \textbf{Estimated Project Timeline}
+\begin{enumerate}
+	\item 12/1/2024 $\sim$ 12/31/2024: Read papers; identify datasets to benchmark; set up solver and pipeline
+	\item 1/1/2025 $\sim$ 2/28/2025: Outperform existing solvers on medium and large datasets
+	\item 3/1/2025 $\sim$ 4/30/2025: Write paper to submit to NeurIPS 2025
+\end{enumerate}
+
 \end{enumerate}
 
 \begin{thebibliography}{00}
