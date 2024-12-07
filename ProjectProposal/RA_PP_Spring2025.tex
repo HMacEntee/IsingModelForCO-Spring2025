@@ -10,22 +10,26 @@
 \begin{enumerate}
 \item \textbf{Project Title:} Training Transformer Network to Find Ground State of Ising Models
 
-\item \textbf{Investigator List:} Levy Lin, Holden Mac Entee, Yanglet Xiaoyang Liu
+\item \textbf{Investigator List:} Levy Lin, Holden Mac Entee, Yanglet Xiao-Yang Liu
 
 \item \textbf{Project Description}
 \begin{enumerate}
 	\item \textbf{Motivation}
 	\newline
-	The Ising model is a powerful model for combinatorial problems, capable of mapping various complex problem states for the discovery of their low energy Hamiltonian or optimal solution. Through this model many NP-Hard problems such as the MaxCut, Traveling Salesman, and Graph-Coloring problem can be solved for at large-scale, opposed to the classical landscape. When combined with the advantages of machine learning, the efficiency and performance of the combinatorial applications of the Ising model can be improved. This projects seeks to explore and discover improvements to pre-exisitng and proposed Ising models with applications towards solving combinatorial problems with machine learning. 
+	The Ising Model has been a prominent problem in physics since 1920. The model represents a mathematical explanation of ferromagnetism in statistical mechanics. The ground state, or alignment of spins in an Ising model to minimize energy, has many applications such as determining physical properties; for instance, magnetism or phase transitions. A related model, known as \textbf{spin glass}, is a magnetic state characterized by randomness. More specifically, the Edwards-Anderson model of spin glass organizes spins on a $d$-dimensional lattice considering only nearest neighbor interactions. The Hamiltonian for this spin system is given by: $H = - \sum_{<ij>}J_{ij}S_iS_j$, as the external magnetic field is assumed 0. This simplified Hamiltonian is related to graph MaxCut, defined as: $H(\sigma) = - \sum_{ij\in E(G)}J_{ij}\sigma_i\sigma_j$. MaxCut, and therefore the ground state of a desired Ising model, can be found using combinatorial optimization.
 
 	\item \textbf{Key Methodology}
-		
+	\newline
+		Finding the ground state of Ising models is an NP-Hard problem. We seek to employ a transformer network aided by reinforcement learning that will find the ground state of an Ising model in a quicker time than current state-of-the-art implementations, and improve the scalability of the problem.
 	\begin{enumerate}
 			
-		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasts of Ising models.}} 
-		\item \textbf{\underline{Task 2: Reproduce Professor Liu's codes and pipeline for baseline.}} 
+		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasts of Ising models.}}
+		\newline Currently we have a dataset from Stanford that can be used to benchmark algorithms. We aim to find several more references containing datasets representing Ising models that we will test current implementations on and compare our solution to.
+		\item \textbf{\underline{Task 2: Reproduce Professor Liu's codes and pipeline for baseline.}}  We will deploy Ising model solvers such as ECO-DQN, Gurobi, and MCPG to create a benchmark that we will compare Professor Liu's codes to.
 
-		\item \textbf{\underline{Task 3: Implement a variant of transformer network and use reinforcement learning algorithm to train it under Professor Liu's guidance.}} 
+		\item \textbf{\underline{Task 3: Implement a variant of transformer network and use RL algorithm to train}}
+		\newline
+		\textbf{\underline{it under Professor Liu's guidance.}} We will implement Professor Liu's transformer network variant and leverage reinforcement learning to generate results on the same datasets used with the aforementioned algorithms to compare the ability of Professor Liu's algorithm.
 
 	\end{enumerate}
 
