@@ -59,7 +59,7 @@ def bip(graph, solver):
 if __name__ == "__main__":
 
     # Extract graph data from data files
-    graph = read_nxgraph('.././data/syn/powerlaw_200_ID0.txt')
+    graph = read_nxgraph('.././data/syn/powerlaw_500_ID0.txt')
 
     # List available solvers usable locally
     print(listSolvers(onlyAvailable=True))
