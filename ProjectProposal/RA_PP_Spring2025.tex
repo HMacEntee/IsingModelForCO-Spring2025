@@ -25,9 +25,29 @@
 			
 		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasets of Ising models.}}
 		\newline Currently we have a dataset from Stanford that can be used to benchmark algorithms. We aim to find several more references containing datasets representing Ising models that we will test current implementations on and compare our solution to.
-		\item \textbf{\underline{Task 2: Construct Datasets based on Graph Distributions.}} We will consider graph distributions such as Barab\'asi-Albert (BA) \cite{b11}, Erd\H os-R\'enyi (ER) \cite{b8}, Power Law (PL) \cite{b9}, and Gset to serve as the benchmark data to compare algorithms.
-		\item \textbf{\underline{Task 3: Reproduce Professor Liu's codes and pipeline for baseline.}}  We will replicate competitive Ising model solvers such as ECO-DQN \cite{b6}, S2V-DQN \cite{b7}, Gurobi, and MCPG \cite{b10} to create a benchmark to compare Professor Liu's codes to.
+		\item \textbf{\underline{Task 2: Construct Datasets based on Graph Distributions.}} We will consider graph distributions such as Barab\'asi-Albert (BA) \cite{b11}, Erd\H os-R\'enyi (ER) \cite{b8}, Power Law (PL) \cite{b9}, and Gset to serve as the benchmark data to compare algorithms. The graph distributions are described as follows:
+		\begin{enumerate}
+			\item BA: Random scale-free networks. Graphs contain nodes with unusally high degrees compared to other nodes in Graph.
+			\item ER: All graphs on a fixed vertex set with a fixed number of edges are equally likely. The probability of generating each graph with $n$ nodes and $M$ edges is: $p^M(1-p)^{({n \atop 2})-M}$
+			\item PL: Any graph whose degree distribution follows a power law. For example, the number of vertices in graph $G$ with degree $i$, $y_i$, is proportional to $i^{-\beta}:y_i \propto i^{-\beta}$.
+even:	evenly, randomly distributed entries
+ 	tor:	2D torus.   All nodes have degree 4.  Wrapped in both directions
+ 	skew:	randomly distributed entries, but the avg degree of nodes 1:n
+ 		appears to be a decaying function, from high (node 1) to low
+ 		(node n)
+			\item Gset: Contains graphs of the following properties:
 
+				1: Even: evenly randomly distributed entries\\
+				2: Tor: All nodes have degree 4, wrapped in both directions\\
+				3: Skew: Randomly distributed entries, but the avg degree of nodes 1:$n$ appears to be a decaying function, from high (node 1) to low (node $n$)
+		\end{enumerate}
+		\item \textbf{\underline{Task 3: Reproduce Professor Liu's codes and pipeline for baseline.}}  We will replicate competitive Ising model solvers such as ECO-DQN \cite{b6}, S2V-DQN \cite{b7}, Gurobi, and MCPG \cite{b10} to create a benchmark to compare Professor Liu's codes to. These algorithms can be quickly summarized as the following:
+		\begin{enumerate}
+			\item ECO-DQN:
+			\item S2V-DQN:
+			\item Gurobi:
+			\item MCPG:
+		\end{enumerate}
 		\item \textbf{\underline{Task 4: Implement a variant of transformer network and use RL algorithm to train}}
 		\newline
 		\textbf{\underline{it under Professor Liu's guidance.}} We will implement Professor Liu's transformer network variant and leverage reinforcement learning to generate results on the same datasets used with the aforementioned algorithms to compare the ability of Professor Liu's algorithm.
