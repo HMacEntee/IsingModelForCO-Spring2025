@@ -23,11 +23,12 @@
 		Finding the ground state of Ising models is an NP-Hard problem. We seek to employ a transformer network aided by reinforcement learning that will find the ground state of an Ising model in a quicker time than current state-of-the-art implementations, and improve the scalability of the problem.
 	\begin{enumerate}
 			
-		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasts of Ising models.}}
+		\item \textbf{\underline{Task 1: Read 3 $\sim$ 5 references and find the associated datasets of Ising models.}}
 		\newline Currently we have a dataset from Stanford that can be used to benchmark algorithms. We aim to find several more references containing datasets representing Ising models that we will test current implementations on and compare our solution to.
-		\item \textbf{\underline{Task 2: Reproduce Professor Liu's codes and pipeline for baseline.}}  We will replicate competitive Ising model solvers such as ECO-DQN \cite{b6}, S2V-DQN \cite{b7}, Gurobi, and MCPG to create a benchmark to compare Professor Liu's codes to.
+		\item \textbf{\underline{Task 2: Construct Datasets based on Graph Distributions.}} We will consider graph distributions such as Barab\'asi-Albert (BA) \cite{b11}, Erd\H os-R\'enyi (ER) \cite{b8}, Power Law (PL) \cite{b9}, and Gset to serve as the benchmark data to compare algorithms.
+		\item \textbf{\underline{Task 3: Reproduce Professor Liu's codes and pipeline for baseline.}}  We will replicate competitive Ising model solvers such as ECO-DQN \cite{b6}, S2V-DQN \cite{b7}, Gurobi, and MCPG \cite{b10} to create a benchmark to compare Professor Liu's codes to.
 
-		\item \textbf{\underline{Task 3: Implement a variant of transformer network and use RL algorithm to train}}
+		\item \textbf{\underline{Task 4: Implement a variant of transformer network and use RL algorithm to train}}
 		\newline
 		\textbf{\underline{it under Professor Liu's guidance.}} We will implement Professor Liu's transformer network variant and leverage reinforcement learning to generate results on the same datasets used with the aforementioned algorithms to compare the ability of Professor Liu's algorithm.
 
@@ -58,7 +59,11 @@
 \bibitem{b4}Laydevant, J., Marković, D. \& Grollier, J. Training an Ising machine with equilibrium propagation. Nat Commun 15, 3671 (2024). https://doi.org/10.1038/s41467-024-46879-4
 \bibitem{b5}Mills, K., Ronagh, P. \& Tamblyn, I. Finding the ground state of spin Hamiltonians with reinforcement learning. Nat Mach Intell 2, 509–517 (2020). https://doi.org/10.1038/s42256-020-0226-x
 \bibitem{b6}Barrett, T. D., Clements, W. R., Foerster, J. N., \& Lvovsky, A. I. (2020). Exploratory combinatorial optimization with reinforcement learning. arXiv. https://arxiv.org/abs/1909.04063
-\bibitem{b7}Pu, T., Fan, C., Shen, M., Lu, Y., Zeng, L., Nussinov, Z., Chen, C., \& Liu, Z. (2024). Transform then explore: A simple and effective technique for exploratory combinatorial optimization with reinforcement learning. arXiv. https://arxiv.org/abs/2404.04661
+\bibitem{b7}Dai, H., Khalil, E. B., Zhang, Y., Dilkina, B., \& Song, L. (2018). Learning combinatorial optimization algorithms over graphs. arXiv. https://arxiv.org/abs/1704.01665
+\bibitem{b8}Alarfaj, B., Taylor, C., \& Bogachev, L. (2023). The joint node degree distribution in the Erdős-Rényi network. arXiv. https://arxiv.org/abs/2303.05138
+\bibitem{b9}Tandon, R., \& Ravikumar, P. (2013). On the difficulty of learning power law graphical models. In 2013 IEEE International Symposium on Information Theory (pp. 2493–2497). https://doi.org/10.1109/ISIT.2013.6620675
+\bibitem{b10}Chen, C., Chen, R., Li, T., Ao, R., \& Wen, Z. (2023). Monte Carlo policy gradient method for binary optimization. arXiv. https://arxiv.org/abs/2307.00783
+\bibitem{b11}Albert, R., \& Barabási, A.-L. (2002). Statistical mechanics of complex networks. Reviews of Modern Physics, 74(1), 47–97. https://doi.org/10.1103/RevModPhys.74.47
 
 \end{thebibliography}
 \end{document}
